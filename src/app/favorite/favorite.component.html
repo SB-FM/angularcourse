@@ -1,0 +1,4 @@
+<div class="favorite__container">
+    <span class="glyphicon fav-icon" [class.glyphicon-heart-empty]="!isFavorite" [class.glyphicon-heart]="isFavorite" (click)="onClick()"></span>
+    <span class="likes-count">{{author.likes}}</span>
+</div>

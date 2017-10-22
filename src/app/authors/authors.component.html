@@ -1,0 +1,15 @@
+<div class="authors__container">
+  <div class="authors_list">
+    <div *ngIf="authors.length > 3; then authorList else noAuthors"></div>
+  </div>
+  <ng-template #authorList>
+    <div class="author__card" *ngFor="let author of authors">
+      <app-favorite [author]="author" (change)="onFavoriteChanged($event)"></app-favorite>
+      <span class="author__value"> {{ author.name }}</span>
+    </div>
+  </ng-template>
+  <ng-template #noAuthors>
+   <div>No Authors yet!</div> 
+  </ng-template>
+
+</div>
