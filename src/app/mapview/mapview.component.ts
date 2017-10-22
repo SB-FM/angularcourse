@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mapview.component.scss']
 })
 export class MapviewComponent implements OnInit {
-
+  viewMode = '';
   constructor() { }
 
   ngOnInit() {
