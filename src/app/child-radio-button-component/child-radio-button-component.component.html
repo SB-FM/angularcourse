@@ -1,0 +1,12 @@
+<div class="form-group" [formGroup]="parentFormGroup">
+  <label>
+    {{control.caption}}
+  </label>
+  <div>
+      <label *ngFor="let value of control.values; let idx = index"
+        class="radio-inline" [title]="control.tooltip">
+        <input type="radio" [name]="control.name" [formControlName]="control.name"/>
+        {{ value }}
+      </label>
+  </div>
+</div>

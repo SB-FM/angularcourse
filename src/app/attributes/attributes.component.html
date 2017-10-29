@@ -1,0 +1,17 @@
+<div class="attribute__wrapper">
+  <div class="attribute-button__container">
+    <a href='#' class="glyphicon glyphicon-minus attribute-button__remove"></a>
+    <select [(ngModel)]="selectedAttribute" (ngModelChange)="onChange($event)" class="attribute-button__label">
+      <option *ngFor="let attr of AD_VALUES" [ngValue]="attr">{{attr}}</option>
+    </select>
+    <a href='#' class="glyphicon glyphicon-wrench attribute-button__config" (click)="onExpand()"></a>
+
+  </div>
+  <div class="attribute-details__container" [hidden]="isExpanded">
+    <input class="attribute-button__value" >
+    <label for="attribute_description">Description</label>
+    <p id="attribute-decription" class="attribute-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec urna lacinia, convallis nisi vel, bibendum lorem. Sed blandit magna quis ex bibendum bibendum. </p>
+    
+  </div>
+  <div class="attribute-button__add"></div>
+</div>
