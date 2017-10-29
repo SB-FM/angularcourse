@@ -1,6 +1,9 @@
+@import '../../src/app/colors.scss';
 .authors__container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: 300px;
 }
 
 .author__card {
@@ -14,16 +17,19 @@
 }
 
 .even {
-  background-color: #ccc
+  background-color: $background-active;
 }
 
 .odd {
-  background-color: #ddd
+  background-color: $background-inactive;
 }
 
 .authors__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  max-width: 400px;
 }
 
 .author__value {
@@ -31,4 +37,11 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 28px;
+  color: $font-active;
+}
+
+.add-button {
+  min-width: 80px;
+  min-height: 40px;
+  background-color: $button-color;
 }

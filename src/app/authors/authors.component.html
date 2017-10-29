@@ -1,6 +1,7 @@
 <div class="authors__container">
-  <div class="authors_list">
+  <div class="authors__list">
     <div *ngIf="authors.length > 0; then authorList else noAuthors"></div>
+    <button class="btn btn-primary add-button" (click)="onAdd()" ></button>
   </div>
   <ng-template #authorList>
     <div class="author__card" [class.even]="isEven" [class.odd]="isOdd" *ngFor="let author of authors;index as i;even as isEven; odd as isOdd">
@@ -11,5 +12,5 @@
   <ng-template #noAuthors>
     <div>No Authors yet!</div>
   </ng-template>
-
+  
 </div>

@@ -17,4 +17,7 @@ export class AuthorsComponent implements OnInit {
   onFavoriteChanged(eventArgs) {
     console.log('Favorite changed: ', eventArgs);
   }
+  onAdd() {
+    this.authors.push({ name: 'Ron Swanson', likes: 666 })
+  }
 }
