@@ -11,6 +11,8 @@ import { AddressComponent } from './address/address.component';
 import { ChildRadioButtonComponentComponent } from './child-radio-button-component/child-radio-button-component.component';
 import { ChildTextBoxComponentComponent } from './child-text-box-component/child-text-box-component.component';
 import { AttributesComponent } from './attributes/attributes.component';
+import { SearchPipe } from './search.pipe';
+import { UnselectedPipe } from './unselected.pipe';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AttributesComponent } from './attributes/attributes.component';
     AddressComponent,
     ChildRadioButtonComponentComponent,
     ChildTextBoxComponentComponent,
-    AttributesComponent
+    AttributesComponent,
+    SearchPipe,
+    UnselectedPipe
   ],
   imports: [
     BrowserModule,

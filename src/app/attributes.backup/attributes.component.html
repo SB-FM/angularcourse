@@ -1,0 +1,19 @@
+<div class="attribute__wrapper" *ngFor="let listitem of AttributeList; let i = index">
+  <div class="attribute-button__container" >
+    <a class="glyphicon glyphicon-minus attribute-button__remove"></a>
+    <select [(ngModel)]="listitem.attributeName" class="attribute-button__label">
+      <option *ngFor="let attr of AD_VALUES" [ngValue]="attr">{{attr}}</option>
+    </select>
+    <a class="glyphicon glyphicon-wrench attribute-button__config" (click)="onExpand(i)"></a>
+   
+  </div>
+  <div class="attribute-details__container" *ngIf="listitem.isExpanded">
+      <input class="attribute-button__value" >
+      <label for="attribute_value">Atrribute Value</label>
+      <p id="attribute-value" class="attribute-value">Sample value </p>
+    
+  </div>
+</div>
+  <div class="attribute-button__add"> Add new Item</div>
+  <div class="attribute-button__add" (click)="log()"> log</div>
+

@@ -1,17 +1,23 @@
-<div class="attribute__wrapper">
-  <div class="attribute-button__container">
-    <a href='#' class="glyphicon glyphicon-minus attribute-button__remove"></a>
-    <select [(ngModel)]="selectedAttribute" (ngModelChange)="onChange($event)" class="attribute-button__label">
-      <option *ngFor="let attr of AD_VALUES" [ngValue]="attr">{{attr}}</option>
-    </select>
-    <a href='#' class="glyphicon glyphicon-wrench attribute-button__config" (click)="onExpand()"></a>
-
-  </div>
-  <div class="attribute-details__container" [hidden]="isExpanded">
-    <input class="attribute-button__value" >
-    <label for="attribute_description">Description</label>
-    <p id="attribute-decription" class="attribute-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec urna lacinia, convallis nisi vel, bibendum lorem. Sed blandit magna quis ex bibendum bibendum. </p>
+<div class="wrapper">
+  <div class="scrollbox" >
+    <input [(ngModel)]="search" class="search" (focus)="onSearchFocus()" (blur)="onSearchFocus()" placeholder="Filter Attributes" >
+    <div class="result-list" [hidden]="!isSearchVisible" >
+      <a *ngFor="let attr of ((AD_VALUES | unselected:attributeList) |search:search)" (mousedown)="addAttribute(attr)">{{attr}}</a>
+    </div>
     
   </div>
-  <div class="attribute-button__add"></div>
+  <div class="attribute__wrapper" *ngFor="let listitem of attributeList; let i = index">
+    <div class="attribute-button__container">
+        
+        <div name="attribute" class="attribute-button__name">{{listitem.attributeName}}</div>
+      
+      
+        <div name="attribute-value" class="attribute-button__value">{{listitem.attributeValue}}</div>
+      
+      <a class="glyphicon glyphicon-minus attribute-button__remove" (mousedown)="removeAttribute(listitem,i)"></a>
+      <a class="glyphicon glyphicon-wrench attribute-button__config"></a>
+    </div>
+  </div>
+  <div class="attribute-button__add" (click)="log()"></div>
 </div>
+
