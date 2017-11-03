@@ -1,0 +1,9 @@
+<div class="container">
+  <a class="title" (click)="onExpand()">
+    {{title}}
+    <span [class]="isExpanded ? 'glyphicon glyphicon-menu-up':'glyphicon glyphicon-menu-down'"> </span>
+  </a>
+  <div *ngIf="isExpanded" class="details">
+   <ng-content></ng-content>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { ChildTextBoxComponentComponent } from './child-text-box-component/child
 import { AttributesComponent } from './attributes/attributes.component';
 import { SearchPipe } from './search.pipe';
 import { UnselectedPipe } from './unselected.pipe';
+import { ZippyComponent } from './zippy/zippy.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { UnselectedPipe } from './unselected.pipe';
     ChildTextBoxComponentComponent,
     AttributesComponent,
     SearchPipe,
-    UnselectedPipe
+    UnselectedPipe,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
